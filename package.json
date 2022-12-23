@@ -1,0 +1,19 @@
+{
+  "name": "selenium_js_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --no-timeouts --parralel --reporter mochawesome --require mochawesome/register --reporter-options reportFilename=TestResults"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.7.1"
+  },
+  "devDependencies": {
+    "mochawesome": "^7.1.3"
+  }
+}
