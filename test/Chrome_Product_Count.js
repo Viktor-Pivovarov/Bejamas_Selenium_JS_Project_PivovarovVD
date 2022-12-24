@@ -12,13 +12,24 @@ describe('Chrome Product Count', function() {
         async function ProductsCount() {
             let products = await driver.findElements(By.className('dVEpkp'));
             const count = products.length;
-            return count;}
+            return count;
+        }
+        async function ProductPagesCount() {
+            let paginationElements = await driver.findElements(By.className('PaginationIndicatorstyle__Li-urm45v-1'));
+            return paginationElements.length;
+        }
         const productCount = await ProductsCount();
-        assert.equal(productCount, 6);
+        const productPagesCount = await ProductPagesCount();
+        if (productPagesCount === 1) {
+            assert.fail('There is only one product page');
+        } else {
+            assert.equal(productCount, 6);
+        }
     });
 
     after(async function() {
     await driver.quit();
     });
 });
+
 
